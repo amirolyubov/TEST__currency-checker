@@ -7,8 +7,13 @@ class AppContainer extends Component {
   constructor (props) {
     super(props)
   }
+  componentDidMount() {
+    const { actions: { getLasestRates } } = this.props
+    getLasestRates('USD')
+  }
   render () {
     const { currencies, meta, actions } = this.props
+    console.log(meta);
     return <div>App Container</div>
   }
 }
